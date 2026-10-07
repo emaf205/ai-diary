@@ -108,3 +108,32 @@ Each repository keeps its own destination directory, so projects remain isolated
 Credentials are stored in GitHub Actions Secrets and are referenced only at runtime.
 
 Never commit FTP passwords, access tokens or private credentials to Git.
+
+
+## Deploy on demand from ChatGPT
+
+The repository includes a harmless file named:
+
+```text
+.deploy-trigger
+```
+
+The deployment workflow watches this file.
+
+After the FTP credentials have been stored once in GitHub Actions Secrets, an authorized GitHub-connected assistant can trigger a production deployment without accessing or exposing those credentials by updating only `.deploy-trigger`.
+
+This creates the following safe flow:
+
+```text
+request: "publish via FTP"
+        ↓
+update .deploy-trigger
+        ↓
+GitHub Actions starts
+        ↓
+credentials are injected privately by GitHub
+        ↓
+public files are uploaded to FTP
+```
+
+No FTP password is stored in the repository, commit history, README, deployment documentation or application files.
