@@ -2,9 +2,11 @@
 
 A minimal public diary of what I build, test and discover with AI, day by day.
 
+**Live:** https://emaf205.com/ideas/ai-library
+
 ## What it is
 
-AI Diary turns an archive of AI conversations, experiments, lessons, prototypes and discoveries into a compact chronological feed.
+AI Diary turns AI experiments, lessons, prototypes, discoveries and occasional dilemmas into a compact chronological feed.
 
 Each entry is short, tweet-like, tagged by topic and grouped by week.
 
@@ -20,30 +22,33 @@ Each entry is short, tweet-like, tagged by topic and grouped by week.
 - anonymized client, company and sensitive information
 - static HTML: no backend and no build step
 
+## Privacy
+
+The GitHub repository contains the interface only.
+
+The historical post archive is intentionally **not published as a separate file in the repository**. Public entries are published through the live AI Diary.
+
 ## Run
 
-Open `index.html` in any modern browser, or publish the repository on any static host.
+Open `index.html` in any modern browser, or upload it to a static host / FTP space.
 
 ## Structure
 
 ```text
 .
 ├── index.html
-├── archive/
-│   └── AI_DIARY_140_EXTENDED_ANON.md
 ├── LICENSE
 └── README.md
 ```
 
-## Editorial format
+## Live version
 
-Entries intentionally vary in length and can include things built, experiments, discoveries, ideas, occasional dilemmas, public links and screenshots when useful.
-
-The public archive anonymizes client/company names and sensitive data.
+https://emaf205.com/ideas/ai-library
 
 ## Author
 
-Emanuele BDC — https://emaf205.com/  
+Emanuele BDC  
+Homepage — https://emaf205.com/  
 Blog — https://emaf205.com/blog/  
 Ideas — https://emaf205.com/ideas/
 
