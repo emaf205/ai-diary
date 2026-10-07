@@ -66,7 +66,7 @@ On supported Android browsers and desktop browsers an **Installa** action appear
 
 The PWA includes:
 
-- a custom AI Diary app icon;
+- a custom AI Diary app icon in PNG + scalable SVG;
 - standalone app mode;
 - mobile home-screen installation;
 - local cache for the interface;
@@ -116,7 +116,6 @@ The interesting part is not only what gets finished. The diary also preserves sm
 │   ├── icon.svg
 │   ├── icon-180.png
 │   ├── icon-192.png
-│   ├── icon-512.png
 │   └── screenshot.jpg
 ├── LICENSE
 └── README.md
