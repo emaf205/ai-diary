@@ -1,12 +1,11 @@
-const CACHE = 'ai-diary-v1';
+const CACHE = 'ai-diary-v2';
 const CORE = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/icon.svg',
   './assets/icon-180.png',
-  './assets/icon-192.png',
-  './assets/icon-512.png'
+  './assets/icon-192.png'
 ];
 
 self.addEventListener('install', event => {
