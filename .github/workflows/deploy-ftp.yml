@@ -10,6 +10,7 @@ on:
       - "sw.js"
       - "assets/**"
       - ".github/workflows/deploy-ftp.yml"
+      - ".deploy-trigger"
 
   workflow_dispatch:
 
