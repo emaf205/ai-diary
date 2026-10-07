@@ -1,0 +1,82 @@
+name: Deploy AI Diary to FTP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "manifest.webmanifest"
+      - "sw.js"
+      - "assets/**"
+      - ".github/workflows/deploy-ftp.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-diary-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to emaf205.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required deployment files
+        shell: bash
+        run: |
+          set -e
+          test -f index.html
+          test -f manifest.webmanifest
+          test -f sw.js
+          test -d assets
+
+      - name: Prepare public package
+        shell: bash
+        run: |
+          set -e
+          rm -rf _deploy
+          mkdir -p _deploy/assets
+          cp index.html _deploy/
+          cp manifest.webmanifest _deploy/
+          cp sw.js _deploy/
+          cp -R assets/. _deploy/assets/
+
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy via FTPS/FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -z "${FTP_HOST:-}" ] || [ -z "${FTP_USER:-}" ] || [ -z "${FTP_PASSWORD:-}" ] || [ -z "${FTP_REMOTE_DIR:-}" ]; then
+            echo "Missing FTP configuration. Add FTP_HOST, FTP_USER, FTP_PASSWORD as repository secrets and FTP_REMOTE_DIR as a repository variable."
+            exit 1
+          fi
+
+          lftp <<EOF
+          set cmd:fail-exit yes
+          set ftp:ssl-force false
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate no
+          open ftp://$FTP_HOST
+          user "$FTP_USER" "$FTP_PASSWORD"
+          mkdir -p "$FTP_REMOTE_DIR"
+          mirror --reverse --verbose --parallel=4 _deploy/ "$FTP_REMOTE_DIR"
+          bye
+          EOF
