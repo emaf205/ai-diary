@@ -1,111 +1,114 @@
 # AI Diary
 
-A public, minimal diary of what I build, test, discover and question while working with AI.
+![AI Diary — interfaccia](assets/screenshot.jpg)
 
-**Live:** https://emaf205.com/ideas/ai-library
+**Una cronaca pubblica e minimale di ciò che costruisco, testo, scopro e metto in discussione lavorando con l'intelligenza artificiale.**
 
-![AI Diary interface](assets/screenshot.jpg)
+### ▶ [APRI AI DIARY ONLINE](https://emaf205.com/ideas/ai-diary/)
 
-## The project
+**Micro-post · ricerca · hashtag · filtri · PWA · privacy by design**
 
-AI Diary started from a simple problem: important experiments, discoveries, ideas and decisions were disappearing inside long ChatGPT conversations.
+---
 
-Instead of writing a traditional blog post for every small discovery, I turned the conversation history into a chronological micro-journal. Each entry is written in the first person, stays within 140 characters, varies naturally in length and can include hashtags, public links, screenshots and occasional dilemmas.
+## Il progetto
 
-The result is not a transcript archive. It is a compressed public history of my work with AI.
+AI Diary nasce da un problema semplice: esperimenti, scoperte, idee e decisioni importanti finivano per perdersi dentro conversazioni molto lunghe con l'AI.
 
-## What enters the diary
+Invece di trasformare ogni piccola scoperta in un articolo, ho costruito una **cronaca cronologica del lavoro quotidiano con l'intelligenza artificiale**.
 
-- things I build;
-- AI experiments;
-- discoveries;
-- prompts and workflows;
-- lessons and teaching experiments;
-- prototypes and small tools;
-- published projects;
-- failures and unexpected results;
-- ideas worth keeping;
-- occasional open questions or dilemmas.
+Ogni voce è scritta in prima persona, resta entro 140 caratteri e può includere hashtag, link pubblici, screenshot reali e, quando serve, dubbi o domande aperte.
 
-Empty days stay empty. No filler is added just to make the timeline look complete.
+Non è un archivio di trascrizioni. È una **memoria pubblica e compressa del processo**.
+
+## Cosa entra nel diario
+
+- progetti che costruisco;
+- esperimenti con l'AI;
+- scoperte e intuizioni;
+- prompt e workflow;
+- lezioni ed esperimenti didattici;
+- prototipi e piccoli strumenti;
+- progetti pubblicati;
+- errori e risultati inattesi;
+- idee che vale la pena conservare;
+- domande e dilemmi ancora aperti.
+
+I giorni vuoti restano vuoti. Nessun contenuto viene aggiunto solo per riempire la timeline.
 
 ## Privacy by design
 
-Before publication:
+Prima della pubblicazione:
 
-- client and company names are anonymized;
-- personal names are removed when unnecessary;
-- email addresses and identifying data are excluded;
-- sensitive or confidential material is never published;
-- dates, links and claims are never invented.
+- aziende e clienti vengono anonimizzati;
+- i nomi personali vengono rimossi quando non necessari;
+- indirizzi email e dati identificativi vengono esclusi;
+- materiale sensibile o riservato non viene pubblicato;
+- date, link e affermazioni non vengono inventati.
 
-The repository intentionally does **not** contain a separate historical Markdown archive of all posts.
+La repository non contiene intenzionalmente un archivio Markdown separato con tutti i post storici.
 
-## Interface
+## Funzionalità
 
-AI Diary is a static, responsive web app with:
+AI Diary è una web app statica e responsive con:
 
-- weekly blocks;
-- full-text search;
-- clickable hashtags;
-- period filters and custom date range;
-- light / dark mode;
-- public project links;
-- optional real screenshots;
-- mobile-first single-column layout.
+- blocchi settimanali;
+- ricerca full-text;
+- hashtag cliccabili;
+- filtri temporali e intervallo date personalizzato;
+- modalità chiara / scura;
+- link pubblici ai progetti;
+- screenshot reali opzionali;
+- layout mobile-first a colonna singola;
+- installazione come PWA.
 
-No framework, database or backend is required.
+Nessun framework, database o backend richiesto.
 
-## PWA: install it like an app
+## PWA
 
-AI Diary is also a Progressive Web App.
+AI Diary può essere installato come una piccola app.
 
-On supported Android browsers and desktop browsers an **Installa** action appears automatically. On iPhone/iPad, open the site in Safari and use:
+Su browser compatibili Android e desktop compare l'azione **Installa**. Su iPhone/iPad:
 
-**Condividi → Aggiungi alla schermata Home**
+**Safari → Condividi → Aggiungi alla schermata Home**
 
-The PWA includes:
+La PWA include:
 
-- a custom AI Diary app icon in PNG + scalable SVG;
-- standalone app mode;
-- mobile home-screen installation;
-- local cache for the interface;
-- offline fallback for already cached pages/assets;
-- saved light/dark preference.
+- icona dedicata in PNG e SVG;
+- modalità standalone;
+- installazione sulla Home;
+- cache locale dell'interfaccia;
+- fallback offline per pagine e asset già memorizzati;
+- salvataggio della preferenza chiaro/scuro.
 
-### App icon
+## Aggiornamento
 
-The icon was designed specifically for this project: an open diary with a small light/spark above it, using the blue/violet visual language of the interface.
+AI Diary non viene aggiornato soltanto a mano.
 
-## Automated update workflow
+Un'attività programmata di ChatGPT, ogni **3 giorni**, analizza il lavoro recente disponibile nelle mie conversazioni e:
 
-AI Diary is not maintained only by hand.
+1. individua attività, esperimenti, scoperte, idee e dubbi rilevanti;
+2. elimina duplicati e contenuti di scarso valore;
+3. riscrive gli eventi utili come micro-post in prima persona entro 140 caratteri;
+4. mantiene lunghezze naturali e variabili;
+5. aggiunge da uno a tre hashtag pertinenti;
+6. inserisce link pubblici verificati quando disponibili;
+7. anonimizza aziende, clienti, persone e dati sensibili;
+8. usa screenshot reali solo quando disponibili, pertinenti e sicuri;
+9. preserva struttura settimanale, ricerca, filtri, PWA e tema;
+10. aggiorna la versione di progetto di `index.html`;
+11. prepara una nuova versione HTML pronta per la pubblicazione.
 
-A scheduled ChatGPT task runs **every 3 days** and reviews the recent work available in my conversations.
+La pubblicazione online resta manuale via FTP: l'automazione prepara l'aggiornamento, il passaggio finale resta sotto il mio controllo.
 
-The automation:
+## Perché
 
-1. finds new AI-related activities, experiments, discoveries, ideas and dilemmas;
-2. removes duplicates and low-value filler;
-3. rewrites useful events as first-person micro-posts of no more than 140 characters;
-4. deliberately keeps posts at different lengths;
-5. adds one to three relevant hashtags;
-6. adds verified public links when available;
-7. anonymizes companies, clients, people and sensitive data;
-8. includes real screenshots only when available, relevant and safe to publish;
-9. preserves weekly grouping, search, filters, PWA and theme toggle;
-10. updates the project version of `index.html`;
-11. produces a fresh HTML version ready for FTP deployment.
+Volevo qualcosa a metà tra **changelog, taccuino di laboratorio, timeline di ricerca e memoria pubblica** del lavoro con l'AI.
 
-The live site is deployed manually via FTP. The automation prepares the update; I keep the final publication step under my control.
+La parte interessante non è soltanto ciò che arriva alla fine. Sono anche le piccole scoperte, gli errori e i dubbi che normalmente sparirebbero dentro una chat.
 
-## Why
+### [Apri AI Diary →](https://emaf205.com/ideas/ai-diary/)
 
-I wanted something between a changelog, a lab notebook, a personal research timeline, early Twitter and a public memory of working with AI.
-
-The interesting part is not only what gets finished. The diary also preserves small discoveries, failed attempts and doubts that would normally disappear inside chats.
-
-## Project structure
+## Struttura
 
 ```text
 .
@@ -121,23 +124,19 @@ The interesting part is not only what gets finished. The diary also preserves sm
 └── README.md
 ```
 
-## Run locally
+## Avvio locale
 
-For a simple preview, open `index.html`.
+Per una semplice anteprima puoi aprire `index.html`.
 
-For full PWA/service-worker behaviour, serve the folder through HTTP/HTTPS. The production version runs at:
+Per testare correttamente PWA e service worker, servi la cartella tramite HTTP/HTTPS.
 
-https://emaf205.com/ideas/ai-library
+**Versione online:**  
+https://emaf205.com/ideas/ai-diary/
 
-## Author
+## Autore
 
 **Emanuele BDC**
 
-- Homepage: https://emaf205.com/
-- Blog: https://emaf205.com/blog/
-- Ideas: https://emaf205.com/ideas/
-- GitHub: https://github.com/emaf205
+[Homepage](https://emaf205.com/) · [Blog](https://emaf205.com/blog/) · [Ideas](https://emaf205.com/ideas/) · [GitHub](https://github.com/emaf205)
 
----
-
-An experiment in turning everyday AI conversations into a living public research diary.
+*Made with ♥ in Milan by Emanuele BDC.*
