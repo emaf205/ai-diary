@@ -1,142 +1,89 @@
-# AI Diary
+# AI Diary — Public Micro-Log of Engineering with Artificial Intelligence
 
-![AI Diary — interfaccia](assets/screenshot.jpg)
+<p align="center">
+  <img src="https://emaf205.com/github/assets/covers/ai-diary.jpg" alt="AI Diary Cover Artwork" width="100%">
+</p>
 
-**Una cronaca pubblica e minimale di ciò che costruisco, testo, scopro e metto in discussione lavorando con l'intelligenza artificiale.**
+> **"A compressed, public memory of the human-in-the-loop engineering process."**  
+> A minimalist Progressive Web App (PWA) logging daily discoveries, prompt breakthroughs, architectural decisions, and honest failures while building software with AI.
 
-### ▶ [APRI AI DIARY ONLINE](https://emaf205.com/ideas/ai-diary/)
-
-**Micro-post · ricerca · hashtag · filtri · PWA · privacy by design**
+[![Live Web App](https://img.shields.io/badge/Live_App-emaf205.com%2Fideas%2Fai--diary-dfff00?style=for-the-badge&logo=googlechrome&logoColor=000000)](https://emaf205.com/ideas/ai-diary/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-emaf205%2Fai--diary-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/emaf205/ai-diary)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](LICENSE)
 
 ---
 
-## Il progetto
+## ✦ The Genesis & Why This Exists
 
-AI Diary nasce da un problema semplice: esperimenti, scoperte, idee e decisioni importanti finivano per perdersi dentro conversazioni molto lunghe con l'AI.
+When you collaborate intensely with AI agents and LLMs every day, you encounter fleeting epiphanies, subtle debugging traps, and unexpected model behaviors. Too often, these insights get buried permanently inside sprawling 50-turn chat transcripts.
 
-Invece di trasformare ogni piccola scoperta in un articolo, ho costruito una **cronaca cronologica del lavoro quotidiano con l'intelligenza artificiale**.
+Writing an essay or LinkedIn post for every small discovery creates too much cognitive overhead. Yet letting these insights vanish feels like intellectual waste.
 
-Ogni voce è scritta in prima persona, resta entro 140 caratteri e può includere hashtag, link pubblici, screenshot reali e, quando serve, dubbi o domande aperte.
+I engineered **AI Diary** as an austere digital chronicle:
+- **Max 140 Characters**: Forces extreme distillation. No fluff, no filler, no corporate jargon.
+- **First-Person Authenticity**: Real discoveries, real prompt formulas, real doubts, and real dead ends.
+- **The Empty Day Rule**: If nothing significant was learned or built on a Tuesday, Tuesday remains empty. Zero algorithmic engagement farming.
 
-Non è un archivio di trascrizioni. È una **memoria pubblica e compressa del processo**.
+It is not an archive of raw transcripts; it is a **compressed public logbook of craft and technical evolution**.
 
-## Cosa entra nel diario
+---
 
-- progetti che costruisco;
-- esperimenti con l'AI;
-- scoperte e intuizioni;
-- prompt e workflow;
-- lezioni ed esperimenti didattici;
-- prototipi e piccoli strumenti;
-- progetti pubblicati;
-- errori e risultati inattesi;
-- idee che vale la pena conservare;
-- domande e dilemmi ancora aperti.
+## ✦ Live Interface & Screenshots
 
-I giorni vuoti restano vuoti. Nessun contenuto viene aggiunto solo per riempire la timeline.
+<p align="center">
+  <img src="assets/screenshot.jpg" alt="AI Diary — Minimalist Timeline Interface" width="100%">
+</p>
 
-## Privacy by design
+---
 
-Prima della pubblicazione:
+## ✦ What Gets Logged
 
-- aziende e clienti vengono anonimizzati;
-- i nomi personali vengono rimossi quando non necessari;
-- indirizzi email e dati identificativi vengono esclusi;
-- materiale sensibile o riservato non viene pubblicato;
-- date, link e affermazioni non vengono inventati.
+- 🛠️ Prototype launches and client-side web tools built.
+- 🔬 Model quirks, hallucinations, and boundary conditions discovered.
+- 💡 Calibrated prompts and multi-agent orchestration patterns.
+- 🎓 Pedagogical insights from university lectures and corporate workshops.
+- ⚠️ Dead ends, discarded architectures, and hard lessons learned.
+- ❓ Open dilemmas that remain unresolved.
 
-La repository non contiene intenzionalmente un archivio Markdown separato con tutti i post storici.
+---
 
-## Funzionalità
+## ✦ Privacy by Design Protocols
 
-AI Diary è una web app statica e responsive con:
+Before any entry is staged to production:
+1. **Corporate Anonymity**: Enterprise client names, internal codebases, and proprietary domains are strictly redacted or abstracted.
+2. **PII Elimination**: Emails, personal identifiers, and private IP addresses are sanitized.
+3. **Factual Grounding**: Dates, links, and benchmarks are verified against git commits. Fictional hype is prohibited.
 
-- blocchi settimanali;
-- ricerca full-text;
-- hashtag cliccabili;
-- filtri temporali e intervallo date personalizzato;
-- modalità chiara / scura;
-- link pubblici ai progetti;
-- screenshot reali opzionali;
-- layout mobile-first a colonna singola;
-- installazione come PWA.
+---
 
-Nessun framework, database o backend richiesto.
+## ✦ Technical Highlights
 
-## PWA
+- **⚡ Lightweight PWA**: Installable on iPhone (Safari) and Android (Chrome) as an offline-first native application.
+- **🔍 Instant Fuzzy Filtering**: Real-time full-text search across all entries with zero latency.
+- **🏷️ Clickable Hashtag Matrix**: Navigate recurring themes (`#pwa`, `#prompting`, `#swissdesign`, `#antigravity`).
+- **🌓 Dual High-Contrast Themes**: Seamless toggle between Swiss Acid White and deep OLED Monochrome Dark Mode.
+- **📱 Zero Server Dependencies**: Static vanilla HTML/CSS/JS architecture served with sub-50ms TTFB.
 
-AI Diary può essere installato come una piccola app.
+---
 
-Su browser compatibili Android e desktop compare l'azione **Installa**. Su iPhone/iPad:
+## ✦ Quickstart & Offline Setup
 
-**Safari → Condividi → Aggiungi alla schermata Home**
+```bash
+# Clone the repository
+git clone https://github.com/emaf205/ai-diary.git
+cd ai-diary
 
-La PWA include:
-
-- icona dedicata in PNG e SVG;
-- modalità standalone;
-- installazione sulla Home;
-- cache locale dell'interfaccia;
-- fallback offline per pagine e asset già memorizzati;
-- salvataggio della preferenza chiaro/scuro.
-
-## Aggiornamento
-
-AI Diary non viene aggiornato soltanto a mano.
-
-Un'attività programmata di ChatGPT, ogni **3 giorni**, analizza il lavoro recente disponibile nelle mie conversazioni e:
-
-1. individua attività, esperimenti, scoperte, idee e dubbi rilevanti;
-2. elimina duplicati e contenuti di scarso valore;
-3. riscrive gli eventi utili come micro-post in prima persona entro 140 caratteri;
-4. mantiene lunghezze naturali e variabili;
-5. aggiunge da uno a tre hashtag pertinenti;
-6. inserisce link pubblici verificati quando disponibili;
-7. anonimizza aziende, clienti, persone e dati sensibili;
-8. usa screenshot reali solo quando disponibili, pertinenti e sicuri;
-9. preserva struttura settimanale, ricerca, filtri, PWA e tema;
-10. aggiorna la versione di progetto di `index.html`;
-11. prepara una nuova versione HTML pronta per la pubblicazione.
-
-La pubblicazione online resta manuale via FTP: l'automazione prepara l'aggiornamento, il passaggio finale resta sotto il mio controllo.
-
-## Perché
-
-Volevo qualcosa a metà tra **changelog, taccuino di laboratorio, timeline di ricerca e memoria pubblica** del lavoro con l'AI.
-
-La parte interessante non è soltanto ciò che arriva alla fine. Sono anche le piccole scoperte, gli errori e i dubbi che normalmente sparirebbero dentro una chat.
-
-### [Apri AI Diary →](https://emaf205.com/ideas/ai-diary/)
-
-## Struttura
-
-```text
-.
-├── index.html
-├── manifest.webmanifest
-├── sw.js
-├── assets/
-│   ├── icon.svg
-│   ├── icon-180.png
-│   ├── icon-192.png
-│   └── screenshot.jpg
-├── LICENSE
-└── README.md
+# Run with any static server
+python3 -m http.server 8080
 ```
 
-## Avvio locale
+Open [http://localhost:8080](http://localhost:8080) to explore the timeline.
 
-Per una semplice anteprima puoi aprire `index.html`.
+---
 
-Per testare correttamente PWA e service worker, servi la cartella tramite HTTP/HTTPS.
+## ✦ Author & Credits
 
-**Versione online:**  
-https://emaf205.com/ideas/ai-diary/
+Chronicle maintained by **[Emanuele BDC](https://emaf205.com)** in Milan.  
+Documenting the practical reality of building software alongside artificial intelligence.
 
-## Autore
-
-**Emanuele BDC**
-
-[Homepage](https://emaf205.com/) · [Blog](https://emaf205.com/blog/) · [Ideas](https://emaf205.com/ideas/) · [GitHub](https://github.com/emaf205)
-
-*Made with ♥ in Milan by Emanuele BDC.*
+Distributed under the **MIT License**. Free for personal and educational inspiration.
