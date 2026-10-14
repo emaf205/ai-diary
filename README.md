@@ -1,7 +1,7 @@
 # AI Diary — Public Micro-Log of Engineering with Artificial Intelligence
 
 <p align="center">
-  <img src="https://emaf205.com/github/assets/covers/ai-diary.jpg" alt="AI Diary Cover Artwork" width="100%">
+  <img src="assets/social-preview.jpg" alt="AI Diary Cover Artwork" width="100%">
 </p>
 
 > **"A compressed, public memory of the human-in-the-loop engineering process."**  
